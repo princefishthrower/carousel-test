@@ -1,25 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { CarouselProvider } from "pure-react-carousel";
+import { Slider, Slide } from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CarouselProvider
+        naturalSlideWidth={2}
+        naturalSlideHeight={1}
+        totalSlides={5}
+      >
+        <Slider>
+          <Slide index={0}>
+            <h2>Here's a text area:</h2>
+            <textarea />
+          </Slide>
+          <Slide index={1}>
+            <h2>Here's an input:</h2>
+            <input />
+          </Slide>
+          <Slide index={2}>
+            <h2>Here's a text area:</h2>
+            <textarea />
+          </Slide>
+          <Slide index={3}>
+            <h2>Here's a text area:</h2>
+            <textarea />
+          </Slide>
+          <Slide index={4}>
+            <h2>Here's a text area:</h2>
+            <textarea />
+          </Slide>
+        </Slider>
+      </CarouselProvider>
+
+      <h2>Here's a non-carousel text area:</h2>
+      <textarea />
+      <h2>Here's a non-carousel input:</h2>
+      <input />
+    </>
   );
 }
 
